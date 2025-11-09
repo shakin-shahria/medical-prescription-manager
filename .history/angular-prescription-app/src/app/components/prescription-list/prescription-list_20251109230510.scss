@@ -1,0 +1,109 @@
+.prescription-container {
+  padding: 24px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+
+  h1 {
+    margin: 0;
+    color: #333;
+  }
+
+  .header-actions {
+    display: flex;
+    gap: 12px;
+  }
+}
+
+.filters-card {
+  margin-bottom: 24px;
+
+  .filter-form {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    flex-wrap: wrap;
+
+    mat-form-field {
+      min-width: 150px;
+    }
+  }
+}
+
+.table-card {
+  .loading-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 200px;
+  }
+
+  .table-container {
+    overflow-x: auto;
+  }
+}
+
+.prescription-table {
+  width: 100%;
+  margin-bottom: 16px;
+
+  th {
+    font-weight: 600;
+    background-color: #f5f5f5;
+  }
+
+  td {
+    padding: 12px 16px;
+  }
+
+  .diagnosis-cell,
+  .medicines-cell {
+    max-width: 200px;
+    word-wrap: break-word;
+  }
+}
+
+mat-paginator {
+  margin-top: 16px;
+}
+
+// Responsive design
+@media (max-width: 768px) {
+  .prescription-container {
+    padding: 16px;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+
+    .header-actions {
+      width: 100%;
+      justify-content: flex-end;
+    }
+  }
+
+  .filter-form {
+    flex-direction: column;
+    align-items: stretch !important;
+
+    mat-form-field {
+      min-width: auto !important;
+    }
+  }
+
+  .prescription-table {
+    font-size: 14px;
+
+    th, td {
+      padding: 8px 12px;
+    }
+  }
+}
