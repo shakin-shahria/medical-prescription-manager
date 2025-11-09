@@ -1,0 +1,57 @@
+<div class="charts-container">
+  <div class="header">
+    <h1>Prescription Analytics</h1>
+    <button mat-raised-button color="primary" (click)="goBack()">
+      <mat-icon>arrow_back</mat-icon>
+      Back to Prescriptions
+    </button>
+  </div>
+
+  <div *ngIf="isLoading" class="loading-container">
+    <mat-spinner diameter="50"></mat-spinner>
+    <p>Loading analytics data...</p>
+  </div>
+
+  <div *ngIf="!isLoading" class="analytics-content">
+    <!-- Simple Metrics Cards -->
+    <div class="metrics-grid">
+      <mat-card class="metric-card">
+        <mat-card-content>
+          <div class="metric-value">{{ totalPrescriptions }}</div>
+          <div class="metric-label">Total Prescriptions</div>
+        </mat-card-content>
+      </mat-card>
+
+      <mat-card class="metric-card">
+        <mat-card-content>
+          <div class="metric-value">{{ todayPrescriptions }}</div>
+          <div class="metric-label">Today</div>
+        </mat-card-content>
+      </mat-card>
+
+      <mat-card class="metric-card">
+        <mat-card-content>
+          <div class="metric-value">{{ thisWeekPrescriptions }}</div>
+          <div class="metric-label">This Week</div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+
+    <!-- Simple Chart -->
+    <mat-card class="chart-card">
+      <mat-card-content>
+        <canvas #dailyChartCanvas width="600" height="300"></canvas>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <div *ngIf="!isLoading && prescriptions.length === 0" class="no-data">
+    <mat-icon class="no-data-icon">analytics</mat-icon>
+    <h3>No Data Available</h3>
+    <p>Create some prescriptions to see analytics and trends.</p>
+    <button mat-raised-button color="primary" (click)="goBack()">
+      <mat-icon>add</mat-icon>
+      Create Prescription
+    </button>
+  </div>
+</div>

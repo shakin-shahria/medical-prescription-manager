@@ -1,0 +1,37 @@
+### GET all prescriptions
+GET http://localhost:8080/api/prescriptions
+Authorization: Basic YWRtaW46YWRtaW4xMjM=   # admin:admin123 in Base64
+
+### POST a new prescription
+POST http://localhost:8080/api/prescriptions
+Content-Type: application/json
+Authorization: Basic YWRtaW46YWRtaW4xMjM=
+
+{
+  "prescriptionDate": "2025-11-09",
+  "patientName": "John Doe",
+  "patientAge": 30,
+  "patientGender": "Male",
+  "diagnosis": "Flu",
+  "medicines": "Paracetamol",
+  "nextVisitDate": "2025-11-15"
+}
+
+### PUT update prescription
+PUT http://localhost:8080/api/prescriptions/1
+Content-Type: application/json
+Authorization: Basic YWRtaW46YWRtaW4xMjM=
+
+{
+  "prescriptionDate": "2025-11-10",
+  "patientName": "Jane Doe",
+  "patientAge": 28,
+  "patientGender": "Female",
+  "diagnosis": "Cold",
+  "medicines": "Vitamin C",
+  "nextVisitDate": "2025-11-20"
+}
+
+### DELETE prescription
+DELETE http://localhost:8080/api/prescriptions/1
+Authorization: Basic YWRtaW46YWRtaW4xMjM=

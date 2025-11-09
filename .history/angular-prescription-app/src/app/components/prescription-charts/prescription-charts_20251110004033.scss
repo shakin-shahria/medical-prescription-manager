@@ -1,0 +1,154 @@
+.charts-container {
+  padding: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 32px;
+
+    h1 {
+      margin: 0;
+      color: #333;
+      font-weight: 500;
+    }
+
+    button {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+  }
+
+  .loading-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 400px;
+    gap: 16px;
+
+    p {
+      color: #666;
+      margin: 0;
+    }
+  }
+
+  .analytics-content {
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      margin-bottom: 32px;
+
+      .metric-card {
+        text-align: center;
+
+        mat-card-content {
+          padding: 24px !important;
+
+          .metric-value {
+            font-size: 48px;
+            font-weight: bold;
+            color: #2196F3;
+            margin-bottom: 8px;
+          }
+
+          .metric-label {
+            font-size: 14px;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+          }
+        }
+      }
+    }
+
+    .chart-card {
+      mat-card-content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 300px;
+        padding: 24px !important;
+
+        canvas {
+          max-width: 100%;
+          height: auto !important;
+        }
+      }
+    }
+  }
+
+  .no-data {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 400px;
+    text-align: center;
+    gap: 16px;
+
+    .no-data-icon {
+      font-size: 64px;
+      width: 64px;
+      height: 64px;
+      color: #ccc;
+    }
+
+    h3 {
+      margin: 0;
+      color: #666;
+    }
+
+    p {
+      color: #999;
+      margin: 0;
+    }
+
+    button {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+  }
+}
+
+// Responsive design
+@media (max-width: 768px) {
+  .charts-container {
+    padding: 16px;
+
+    .header {
+      flex-direction: column;
+      gap: 16px;
+      text-align: center;
+
+      h1 {
+        font-size: 24px;
+      }
+    }
+
+    .charts-grid {
+      grid-template-columns: 1fr;
+      gap: 16px;
+
+      .chart-card {
+        &.full-width {
+          grid-column: auto;
+        }
+
+        mat-card-content {
+          min-height: 250px;
+
+          canvas {
+            width: 100% !important;
+            max-width: 100%;
+          }
+        }
+      }
+    }
+  }
+}

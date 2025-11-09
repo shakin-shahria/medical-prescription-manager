@@ -1,0 +1,35 @@
+<mat-sidenav-container class="sidebar-container">
+  <mat-sidenav mode="side" opened class="sidebar">
+    <mat-toolbar class="sidebar-header">
+      <span>Prescription App</span>
+    </mat-toolbar>
+
+    <mat-nav-list class="sidebar-nav">
+      <a mat-list-item routerLink="/prescriptions" routerLinkActive="active">
+        <mat-icon matListIcon>list</mat-icon>
+        <span matLine>Prescriptions</span>
+      </a>
+
+      <a mat-list-item routerLink="/prescriptions/new" routerLinkActive="active">
+        <mat-icon matListIcon>add</mat-icon>
+        <span matLine>New Prescription</span>
+      </a>
+
+      <a mat-list-item routerLink="/prescriptions/charts" routerLinkActive="active">
+        <mat-icon matListIcon>bar_chart</mat-icon>
+        <span matLine>Charts & Reports</span>
+      </a>
+
+      <mat-divider></mat-divider>
+
+      <button mat-list-item (click)="logout()">
+        <mat-icon matListIcon>logout</mat-icon>
+        <span matLine>Logout</span>
+      </button>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content class="main-content">
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

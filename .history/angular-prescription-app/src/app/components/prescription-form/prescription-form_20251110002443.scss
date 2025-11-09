@@ -1,0 +1,71 @@
+.form-card {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+}
+
+.prescription-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-row {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+
+  .form-field {
+    flex: 1;
+    min-width: 200px;
+
+    &.full-width {
+      flex: 1 1 100%;
+    }
+  }
+}
+
+.form-actions {
+  padding-top: 16px;
+  border-top: 1px solid #e0e0e0;
+  margin-top: 16px;
+
+  button {
+    margin-left: 8px;
+  }
+}
+
+mat-card-content {
+  padding-top: 16px;
+}
+
+mat-card-header {
+  margin-bottom: 16px;
+}
+
+// Responsive design
+@media (max-width: 600px) {
+  .form-card {
+    margin: 10px;
+    padding: 16px;
+  }
+
+  .form-row {
+    flex-direction: column;
+    gap: 8px;
+
+    .form-field {
+      min-width: unset;
+    }
+  }
+
+  .form-actions {
+    flex-direction: column;
+    gap: 8px;
+
+    button {
+      margin-left: 0;
+      width: 100%;
+    }
+  }
+}
